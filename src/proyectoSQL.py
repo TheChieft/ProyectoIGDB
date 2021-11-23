@@ -1,4 +1,4 @@
-def homicidiosPorDepartamento(): 
+def homicidiosPorDepartamento():
     return """SELECT d.Nombre_Departamento as departamento, COUNT(hc.ID_caso) as homicidios
             FROM homicidios_colombia hc, departamento d, municipio mc
             WHERE hc.Codigo_Dane_municipio = mc.Codigo_Municipio_Dane AND mc.Codigo_Dane_Departamento = d.Codigo_Dane_Departamento
@@ -10,7 +10,8 @@ def armasHomicidios():
     return """SELECT ar.Nombre_arma as Arma, COUNT(hc.ID_caso) as Homicidios
             FROM  homicidios_colombia hc, tipo_arma ar
             WHERE hc.ID_tipo_arma = ar.ID_tipo_arma
-            GROUP BY (ar.Nombre_arma)"""
+            GROUP BY (ar.Nombre_arma)
+            ORDER BY (COUNT(hc.ID_caso)) DESC"""
 
 ## Esta sentencia SQL nos indica el numero de veces que X arma se uso en un homicidio, mostrará dos columnas una con el nombre del arma 
 ## y la otra con el número de homicidios realizads con ese tipo de arma. Esta dentro de una función que posteriormente se llamará en proyecto.py
