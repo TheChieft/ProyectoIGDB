@@ -46,15 +46,19 @@ _En el momento que halla completado la descarga y abierto la carpeta, es posible
 
 instalacion de libreria **psycopg2**
 ```
-pip install psycopg2
+pip3 install psycopg2
 ```
 instalacion de libreria **dash**
 ```
-pip install dash
+pip3 install dash
 ```
 instalacion de libreria **pandas**
 ```
-pip install pandas
+pip3 install pandas
+```
+instalacion de libreria **requests**
+```
+pip3 install requests
 ```
 ## Usando los archivos 🖇️
 
