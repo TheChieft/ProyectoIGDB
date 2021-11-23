@@ -11,33 +11,40 @@ external_stylesheets = ["https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist
 
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
+##Se abre la conexión
 con = Connection()
 con.openConnection()
 conexion = con.cursor()
 
-query = pd.read_sql_query(sql.homicidiosPorDepartamento(), con.connection)
-query2 = pd.read_sql_query(sql.armasHomicidios(), con.connection)
-query3 = pd.read_sql_query(sql.generoVictimarios(), con.connection)
-query4 = pd.read_sql_query(sql.homicidiosPorAño(), con.connection)
-query5 = pd.read_sql_query(sql.homicidios_municipios(), con.connection)
-query6 = pd.read_sql_query(sql.edad_victimarios(), con.connection)
+query = pd.read_sql_query(sql.homicidiosPorDepartamento(), con.connection) # se lee la sentencia sql que se encuentra en la función homicidiosPorDepartamento()
+query2 = pd.read_sql_query(sql.armasHomicidios(), con.connection) # se lee la sentencia sql que se encuentra en la función armasHomicidios()
+query3 = pd.read_sql_query(sql.generoVictimarios(), con.connection) # se lee la sentencia sql que se encuentra en la función generoVictimarios()
+query4 = pd.read_sql_query(sql.homicidiosPorAño(), con.connection) # se lee la sentencia sql que se encuentra en la función homicidiosPorAño()
+query5 = pd.read_sql_query(sql.homicidios_municipios(), con.connection) # se lee la sentencia sql que se encuentra en la función homicidios_municipios()
+query6 = pd.read_sql_query(sql.edad_victimarios(), con.connection) # se lee la sentencia sql que se encuentra en la función edad_victimarios()
 
-con.closeConnection()
+con.closeConnection() #se cierra la conexión con el motor
 
-datosHomicidiosporDepartamento = pd.DataFrame(query, columns=["departamento", "homicidios"])
+#se guarda los respectivos datos del SQL, que se encuentran en query#, en un dataframe y se define el nombre de las columnas
+
+datosHomicidiosporDepartamento = pd.DataFrame(query, columns=["departamento", "homicidios"]) 
 datosHomicidiosArmas = pd.DataFrame(query2, columns=["arma", "homicidios"])
 datosGeneroVictimarios = pd.DataFrame(query3, columns=["genero", "homicidios"])
 datosHomicidiosporAño = pd.DataFrame(query4, columns=["año", "homicidios"])
 datosHomicidiosporMunicipio = pd.DataFrame(query5, columns=["municipio", "homicidios"])
 datosEdadVictimarios = pd.DataFrame(query6, columns=["grupo_etario", "homicidios"])
 
-
+#una vez se tiene los datos en un dataframe se crean las respectivas gráficas, se nombran los ejes de la gráfica
 hDepartamentos = px.bar(datosHomicidiosporDepartamento.head(32), x="departamento", y="homicidios")
 hMunicipio = px.bar(datosHomicidiosporMunicipio.head(20), x="municipio", y="homicidios")
 harma = px.bar(datosHomicidiosArmas.head(42), x="arma", y="homicidios")
 hgenero = px.pie(datosGeneroVictimarios.head(5), names="genero", values="homicidios")
 hedad = px.pie(datosEdadVictimarios.head(5), names="grupo_etario", values="homicidios")
 haño = px.line(datosHomicidiosporAño.head(20), x="año", y="homicidios")
+
+
+#Visualización
+# Despues de haber creado las gráficas se organizan como apareceran en el dash y se ponen los respctivos titulos
 
 app.layout = html.Div(children=[
     html.H1(children='Analisis Homicidios Colombia'),
