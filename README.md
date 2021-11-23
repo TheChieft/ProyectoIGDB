@@ -85,7 +85,7 @@ _Por ultimo tienen que entrar al archivo Connection.py seguir sus instrucciones 
 
 ##Expresiones de Gratitud 🎁
 
-El grupo conformado por Johan Caro, Juanita Robles y Andres Yañez agradecemos publicamenta a nuestra profesora de la materia Ingenieria de Datos 🤓, Tambien cada uno esta agrecido entre nosotros por el trabajo realizado y cumplir con todo lo plasmado al inicio del proyecto 😊._
+_El grupo conformado por Johan Caro, Juanita Robles y Andres Yañez agradecemos publicamenta a nuestra profesora de la materia Ingenieria de Datos 🤓, Tambien cada uno esta agrecido entre nosotros por el trabajo realizado y cumplir con todo lo plasmado al inicio del proyecto 😊._
 
 
 
