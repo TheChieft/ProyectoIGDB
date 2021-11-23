@@ -79,7 +79,7 @@ _Por ultimo tienen que entrar al archivo Connection.py seguir sus instrucciones 
 
 ## Autores ✒️
 
-* 🍔 **Johan Caro** - *Implementacion grafica en DASH, Entregas y Documentos, estructura de modelos relacionales, implementacion de datos, implementaciones finales* [Yucaloid(https://github.com/Yucaloid)
+* 🍔 **Johan Caro** - *Implementacion grafica en DASH, Entregas y Documentos, estructura de modelos relacionales, implementacion de datos, implementaciones finales* [Yucaloid](https://github.com/Yucaloid)
 * 🌷 **Juanita Robles** - *Implementacion grafica en DASH, proceso de diseño y estructuras, modelos relacionales* [juanis07](https://github.com/juanis07)
 * 🍀 **Andrés Yañez** - *Busqueda e implementacion de datos, Conexiones Python, PostgreSQL y Git, Code Tester, modelos relacionaes* [TheChieft](https://github.com/TheChieft)
 
