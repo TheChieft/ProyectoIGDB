@@ -83,7 +83,7 @@ _Por ultimo tienen que entrar al archivo Connection.py seguir sus instrucciones 
 * 🌷 **Juanita Robles** - *Implementacion grafica en DASH, proceso de diseño y estructuras, modelos relacionales* [juanis07](https://github.com/juanis07)
 * 🍀 **Andrés Yañez** - *Busqueda e implementacion de datos, Conexiones Python, PostgreSQL y Git, Code Tester, modelos relacionaes* [TheChieft](https://github.com/TheChieft)
 
-##Expresiones de Gratitud 🎁
+## Expresiones de Gratitud 🎁
 
 _El grupo conformado por Johan Caro, Juanita Robles y Andres Yañez agradecemos publicamenta a nuestra profesora de la materia Ingenieria de Datos 🤓, Tambien cada uno esta agrecido entre nosotros por el trabajo realizado y cumplir con todo lo plasmado al inicio del proyecto 😊._
 
