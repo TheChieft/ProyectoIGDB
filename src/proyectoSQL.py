@@ -11,9 +11,6 @@ def armasHomicidios():
             GROUP BY (ar.Nombre_arma)
             ORDER BY (COUNT(hc.ID_caso)) DESC"""
 
-## Esta sentencia SQL nos indica el numero de veces que X arma se uso en un homicidio, mostrará dos columnas una con el nombre del arma 
-## y la otra con el número de homicidios realizads con ese tipo de arma. Esta dentro de una función que posteriormente se llamará en proyecto.py
-
 def generoVictimarios():
     return """SELECT gen.Nombre_genero as genero, COUNT(hc.ID_caso) as homicidios
             FROM homicidios_colombia hc, genero_victimario gen
