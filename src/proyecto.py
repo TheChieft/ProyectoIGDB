@@ -52,8 +52,14 @@ hMunicipioP = px.pie(datosHomicidiosporMunicipio.head(5), names="municipio", val
 
 
 harma = px.pie(datosHomicidiosArmas.head(5), names="arma", values="homicidios")
-hgenero = px.pie(datosGeneroVictimarios.head(5), names="genero", values="homicidios")
-hedad = px.pie(datosEdadVictimarios.head(5), names="grupo_etario", values="homicidios")
+
+
+hgeneroP = px.pie(datosGeneroVictimarios.head(5), names="genero", values="homicidios")
+hgeneroB = px.bar(datosGeneroVictimarios.head(5), x="genero", y="homicidios")
+
+hedadP = px.pie(datosEdadVictimarios.head(5), names="grupo_etario", values="homicidios")
+hedadB = px.bar(datosEdadVictimarios.head(5), x="grupo_etario", y="homicidios")
+
 haño = px.line(datosHomicidiosporAño.head(20), x="año", y="homicidios")
 
 app.layout = html.Div(children=[
@@ -87,13 +93,21 @@ app.layout = html.Div(children=[
     ),
     html.H2(children='Grupo etario Victimarios'),
     dcc.Graph(
-        id='Grupo etario Victimarios',
-        figure=hedad
+        id='Grupo etario Victimarios Pie',
+        figure=hedadP
+    ),
+    dcc.Graph(
+        id='Grupo etario Victimarios Barras',
+        figure=hedadB
     ),
     html.H2(children='Genero Victimarios'),
     dcc.Graph(
-        id='Genero Victimarios',
-        figure=hgenero
+        id='Genero Victimarios Pie',
+        figure=hgeneroP
+    ),
+    dcc.Graph(
+        id='Genero Victimarios Barras',
+        figure=hgeneroB
     ),
     html.H2(children='Homicidios por año'),
     dcc.Graph(
