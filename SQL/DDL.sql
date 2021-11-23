@@ -1,3 +1,18 @@
+/*
+DDL es un archivo para crear las tablas de la base de datos para
+el analisis de nuestro proyecto, despues de usted crear su base de 
+datos de la forma 
+
+CREATE DATABASE your_name_data_base
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    CONNECTION LIMIT = -1;
+
+Recuerde que esta base de datos tiene como idioma Español(Colombia)
+por eso es necesario tener la codificacion UTF-8 para evitar problemas
+*/
+
 CREATE TABLE PUBLIC.datos_no_normalizado(
 	Departamento varchar(50) NOT NULL,
 	Municipio varchar(50) NOT NULL,
@@ -17,10 +32,6 @@ CREATE TABLE PUBLIC.tabla_municipios_departamentos(
 	Codigo_Dane_Municipio integer NOT NULL,
 	Municipio varchar(100) NOT NULL
 );
-
-COPY PUBLIC.datos_no_normalizado FROM 'SQL\database\DB_Departamentos_y_municipios_de_Colombia.csv' DELIMITER ',' CSV HEADER;
-
-COPY PUBLIC.tabla_municipios_departamentos FROM 'SQL\database\DB_Homicidios.csv' DELIMITER ';' CSV HEADER;
 
 UPDATE tabla_municipios_departamentos set Region = Upper(Region), Departamento = Upper(Departamento), Municipio = Upper(Municipio);
 

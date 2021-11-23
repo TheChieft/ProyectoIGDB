@@ -1,9 +1,13 @@
+/*
+El archivo actual DML.sql es un archivo para insertar los valores de la base de datos encontradas 
+en nuestra propia DB. Para ello siga las instrucciones a continuacion.
 
-/* 
 Porfavor cambie SQL\database\DB_Homicidios.csv y SQL\database\DB_Departamentos_y_municipios_de_Colombia.csv
 en el codigo, ponga su ruta donde descargo la base de datos DB_departamento y DB_homicidios 
 un ejemplo : "C:\Users\USER\Downloads" 
 */
+
+/* las dos siguientes lineas de codigo funcionan para copiar los valores de las otras BD*/
 COPY PUBLIC.datos_no_normalizado FROM 'SQL\database\DB_Homicidios.csv'DELIMITER ',' CSV HEADER;
 
 COPY PUBLIC.tabla_municipios_departamentos FROM 'SQL\database\DB_Departamentos_y_municipios_de_Colombia.csv'DELIMITER ';' CSV HEADER;
